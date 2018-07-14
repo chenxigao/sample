@@ -8,7 +8,19 @@
              <section class="user_info">
               @include('shared._user_info',['user'=>$user])
              </section>
+             <section class="stats">
+              @include('shared._stats',['user'=>$user])
+             </section>
          </div>
+
+             <div class="col-md-12">
+                 <section class="follow_form">
+                     @if(Auth::check())
+                     @include('users._follow_form')
+                     @endif
+                 </section>
+             </div>
+
          </div>
            <div class="col-md-12">
                @if(count($statuses) > 0)
